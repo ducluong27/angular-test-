@@ -1,0 +1,11 @@
+<app-header (onGetIsEdit)="getIsEdit($event)"></app-header>
+<app-add-task (onAddTask)="addTask($event)" [taskEdit]="taskEdit" [isEdit]="isEdit" (onGetFunctionEdit)="getFunctionEdit($event)"></app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  [func]="func"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+  (onGetTaskEdit)="getTaskEdit($event)"
+  (onGetIsEdit)="getIsEdit($event)"
+></app-task-item>
